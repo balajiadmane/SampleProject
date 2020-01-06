@@ -1,0 +1,14 @@
+#pricing-body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.card-header{
+    background-color: #a3daa3;
+    padding: 0.23rem;
+    text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .card-body{
+        padding:unset !important;
+  }
+  }

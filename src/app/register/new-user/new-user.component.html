@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 card-body">
+        <form [formGroup] = "newUser" (ngSubmit) = "submitForm(newUser)">
+          <h4 style="width:100%;text-align: center;">New user</h4>
+          <div class="form-group">
+            <label for="">Enter name:</label>
+            <input [ngClass]="{
+              'red-br':newUser.controls.name.invalid && (newUser.controls.name.touched || formSubmited),
+              'green-br':newUser.controls.name.valid && newUser.controls.name.touched
+            }" type="text" formControlName="name" class="form-control" placeholder="Enter name">
+            <div class='text-danger' *ngIf="newUser.controls.name.invalid && newUser.controls.name.touched">
+                  Please enter valid name
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="">Enter email:</label>
+              <input type="email"
+              [ngClass]="{
+                'red-br':newUser.controls.name.invalid && (newUser.controls.email.touched || formSubmited),
+                'green-br':newUser.controls.name.valid && newUser.controls.email.touched
+              }" 
+              formControlName="email" class="form-control" placeholder="Enter emal">
+              <div class='text-danger' *ngIf="newUser.controls.email.invalid && newUser.controls.email.touched">
+                  Please enter valid email
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="">Enter password:</label>
+                <input
+                [ngClass]="{
+                  'red-br':newUser.controls.name.invalid && (newUser.controls.password.touched || formSubmited),
+                  'green-br':newUser.controls.name.valid && newUser.controls.password.touched
+                }" 
+                type="password" formControlName="password" class="form-control" placeholder="Enter password">
+                <div class='text-danger' *ngIf="newUser.controls.password.invalid && newUser.controls.password.touched">
+                    Please enter valid password ( length should be > 7 and < 8)
+              </div>
+              </div>
+                <br />
+                <input type="submit" value="Register" class="btn btn-primary">
+                <div class="alert alert-warning" *ngIf="newUser.status==='INVALID' && formSubmited"> 
+                    Please fill above fields
+                </div>
+                <p style="float: right;">Already user<a routerLink="/register/login">Click</a></p>
+        </form>
+  </div>
+  <div class="col-md-3"></div>
+</div>

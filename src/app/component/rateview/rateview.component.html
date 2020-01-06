@@ -1,0 +1,243 @@
+<div class="" [@fadeIn]="animation">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Description:</label>
+        <select #bySort (change)="filterPipe(bySort.value)" class="form-control">
+          <option [value]="view1.description" *ngFor="let view1  of rateView">{{view1.description}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>SIC Code:</label>
+        <input type="text" [ngModel]="rateViewData.sic_code" class="form-control">
+      </div>
+    </div>
+
+  </div>
+  <!-- card -->
+
+  <form [formGroup] = "rateViewForm" (ngSubmit)="submitForm(rateViewForm.value)">
+    <div class="row" id="card-price">
+      <div class="col-md-6">
+     
+        <div class="input-group" [ngClass]="{
+          'warn': rateViewForm.controls.visa.invalid && rateViewForm.controls.visa.touched,
+          'succ': rateViewForm.controls.visa.valid && rateViewForm.controls.visa.touched 
+        }">
+          <div class="input-group-prepend" >
+            <span class="input-group-text">
+                <img src="./assets/images/card.png" class="card" alt="card" />$
+            </span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['visa']" formControlName="visa">
+          
+        </div>
+      </div>
+    
+      <div class="col-md-6">
+         
+          <div class="input-group" [ngClass]="{
+            'warn': rateViewForm.controls.card1.invalid && rateViewForm.controls.card1.touched,
+            'succ': rateViewForm.controls.card1.valid && rateViewForm.controls.card1.touched 
+          }">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <img src="./assets/images/card.png" class="card" alt="card" /> #
+              </span>
+            </div>
+            <input type="text" class="form-control"[(ngModel)] = "rateViewData.cardBalance['card1']" formControlName="card1" placeholder="Username">
+          </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-group" [ngClass]="{
+              'warn': rateViewForm.controls.card2.invalid && rateViewForm.controls.card2.touched,
+              'succ': rateViewForm.controls.card2.valid && rateViewForm.controls.card2.touched 
+            }">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <img src="./assets/images/card.png" class="card" alt="card" /> $
+                </span>
+              </div>
+              <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['card2']" formControlName="card2" placeholder="Username">
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="input-group" [ngClass]="{
+                'warn': rateViewForm.controls.card3.invalid && rateViewForm.controls.card3.touched,
+                'succ': rateViewForm.controls.card3.valid && rateViewForm.controls.card3.touched 
+              }">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <img src="./assets/images/card.png" class="card" alt="card" /> #
+                  </span>
+                </div>
+                <input type="text" class="form-control"  [(ngModel)] = "rateViewData.cardBalance['card3']" formControlName="card3" placeholder="Username">
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group" [ngClass]="{
+                  'warn': rateViewForm.controls.card4.invalid && rateViewForm.controls.card4.touched,
+                  'succ': rateViewForm.controls.card4.valid && rateViewForm.controls.card4.touched 
+                }">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <img src="./assets/images/card.png" class="card" alt="card" /> $
+                    </span>
+                  </div>
+                  <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['card4']"  formControlName="card4" placeholder="Username">
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="input-group " [ngClass]="{
+                    'warn': rateViewForm.controls.card5.invalid && rateViewForm.controls.card5.touched,
+                    'succ': rateViewForm.controls.card5.valid && rateViewForm.controls.card5.touched 
+                  }">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <img src="./assets/images/card.png" class="card" alt="card" />#
+                      </span>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['card5']"  formControlName="card5" placeholder="Username">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group" [ngClass]="{
+                      'warn': rateViewForm.controls.card6.invalid && rateViewForm.controls.card6.touched,
+                      'succ': rateViewForm.controls.card6.valid && rateViewForm.controls.card6.touched 
+                    }">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <img src="./assets/images/card.png" class="card" alt="card" /> $
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['card6']"  formControlName="card6" placeholder="Username">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="input-group" [ngClass]="{
+                        'warn': rateViewForm.controls.card7.invalid && rateViewForm.controls.card7.touched,
+                        'succ': rateViewForm.controls.card7.valid && rateViewForm.controls.card7.touched 
+                      }">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <img src="./assets/images/card.png" class="card" alt="card" /> #
+                          </span>
+                        </div>
+                        <input type="text" class="form-control" [(ngModel)] = "rateViewData.cardBalance['card7']"  formControlName="card7" placeholder="Username">
+                      </div>
+                    </div>
+    </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+      <label>Total Volume:</label>
+      <div class="input-group" [ngClass]="{
+        'warn': rateViewForm.controls.totalValume.invalid && rateViewForm.controls.totalValume.touched,
+        'succ': rateViewForm.controls.totalValume.valid && rateViewForm.controls.totalValume.touched 
+      }">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['totalValume']" formControlName="totalValume" placeholder="Username">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label>Total Transation:</label>
+      <div class="input-group" [ngClass]="{
+        'warn': rateViewForm.controls.totalTransaction.invalid && rateViewForm.controls.totalTransaction.touched,
+        'succ': rateViewForm.controls.totalTransaction.valid && rateViewForm.controls.totalTransaction.touched 
+      }">
+        <div class="input-group-prepend">
+          <span class="input-group-text">#</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['totalTransaction']" disabled formControlName="totalTransaction" placeholder="Username">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="">Avg Ticket</label>
+      <div class="input-group" [ngClass]="{
+        'warn': rateViewForm.controls.avgTicket.invalid && rateViewForm.controls.avgTicket.touched,
+        'succ': rateViewForm.controls.avgTicket.valid && rateViewForm.controls.avgTicket.touched 
+      }">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['avgTicket']" disabled formControlName="avgTicket"  placeholder="Username">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="">Current Rate</label>
+      <div class="input-group" [ngClass]="{
+        'warn': rateViewForm.controls.currentRate.invalid && rateViewForm.controls.currentRate.touched,
+        'succ': rateViewForm.controls.currentRate.valid && rateViewForm.controls.currentRate.touched 
+      }">
+        <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['currentRate']" disabled formControlName="currentRate"  placeholder="Your Email">
+        <div class="input-group-append">
+          <span class="input-group-text">%</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+        <label for="">Current Fees:</label>
+        <div class="input-group" [ngClass]="{
+          'warn': rateViewForm.controls.currentFees.invalid && rateViewForm.controls.currentFees.touched,
+          'succ': rateViewForm.controls.currentFees.valid && rateViewForm.controls.currentFees.touched 
+        }">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['currentFees']" formControlName="currentFees"  placeholder="Username">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <label for="">Current Amex Fees:</label>
+        <div class="input-group" [ngClass]="{
+          'warn': rateViewForm.controls.currentAmexFees.invalid && rateViewForm.controls.currentAmexFees.touched,
+          'succ': rateViewForm.controls.currentAmexFees.valid && rateViewForm.controls.currentAmexFees.touched 
+        }">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['currentAmexFees']" formControlName="currentAmexFees"  placeholder="Username">
+        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" >
+        <label>Marchant:</label>
+        <input type="text" [ngClass]="{
+          'warn': rateViewForm.controls.merchantType.invalid && rateViewForm.controls.merchantType.touched,
+          'succ': rateViewForm.controls.merchantType.valid && rateViewForm.controls.merchantType.touched 
+        }" class="form-control" [(ngModel)] = "rateViewData.pipeLine['merchantType']" formControlName="merchantType">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group" >
+        <label for="">High Speed:</label>
+        <input [ngClass]="{
+          'warn': rateViewForm.controls.HighSpped.invalid && rateViewForm.controls.HighSpped.touched,
+          'succ': rateViewForm.controls.HighSpped.valid && rateViewForm.controls.HighSpped.touched 
+        }" type="text" class="form-control" [(ngModel)] = "rateViewData.pipeLine['HighSpped']" formControlName="HighSpped">
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-3">
+      <input type="submit" value="Submit" class="btn btn-info">
+
+    </div>
+    <div class="col-md-9">
+      <!-- <div *ngIf="isFormValid" class="alert alert-danger">
+        Please fill all field.
+      </div> -->
+    </div>
+  </div>
+ 
+ 
+  </form>
+
+</div>

@@ -1,0 +1,18 @@
+<table [@rotateInDownLeft]="fadeIn" class="table table-striped" matSort (matSortChange)="sortData($event)"> 
+  <thead>
+    <tr>
+      <th  mat-sort-header="name">Name</th>
+      <th  mat-sort-header="Saving">Saving</th>
+      <th  mat-sort-header="Residuals">Residuals</th>
+      <th  mat-sort-header="Rate">Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr title="Edit" (click) = "editRow(price)" *ngFor="let price of pricing">
+        <td>{{price.name}}</td>
+        <td>{{price.Saving | currency:'USD'}}</td>
+        <td>{{price.Residuals | currency:'USD'}}</td>
+        <td>{{price.Rate}}%</td>
+    </tr>
+  </tbody>
+</table>

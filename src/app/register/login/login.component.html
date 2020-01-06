@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 card-body">
+     
+      <form [formGroup] = "loginForm" (ngSubmit) = "submitForm(loginForm)">
+         <h4 style="width: 100%;text-align: center;">Login</h4>
+          <div class="form-group">
+            <label for="">Enter email:</label>
+            <input
+            [ngClass]="{
+              'red-br':loginForm.controls.email.invalid && (loginForm.controls.email.touched || formSubmit),
+              'green-br':loginForm.controls.email.valid && loginForm.controls.email.touched
+            }"
+            type="email" formControlName="email" class="form-control">
+            <div class='text-danger' *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+                Invalid email address
+            </div>
+          
+          </div>
+
+          <div class="form-group">
+            <label for="">Enter password:</label>
+            <input
+            [ngClass] = "{
+              'red-br':loginForm.controls.password.invalid && (loginForm.controls.password.touched || formSubmit),
+              'green-br':loginForm.controls.password.valid && loginForm.controls.password.touched
+            }"
+            type="password" class="form-control" formControlName="password">
+
+            <div class='text-danger' *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+                    Password is required
+            </div>
+          </div> <br />
+          <input style="" type="submit" value="Login" class="btn btn-primary"> 
+          <p style="float: right;">New user <a routerLink="/register/newUser">Click</a></p>
+         <div *ngIf="loginForm.status === 'INVALID' && formSubmit
+         " class="alert alert-warning">
+              Please fill above fields
+         </div>
+         <div
+         [ngClass]="{
+           'alert alert-warning':!message.status && formSubmit,
+           'alert alert-success':message.status && formSubmit
+         }"
+         > 
+            {{message.message}}
+         </div>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>

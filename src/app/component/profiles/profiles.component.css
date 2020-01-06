@@ -1,0 +1,22 @@
+*{
+    padding:0px;
+}
+.card-body{
+    margin-left:20px;
+}
+h5 , p{
+    font-size:13px;
+}
+img{    width: 80%;
+    border: 1px solid green;}
+
+    a{
+        font-size: 13px;;
+        margin-left: 5px;
+        text-align: center;
+    }
+
+    img{
+        width: 10rem;;
+        height: 10rem;
+    }

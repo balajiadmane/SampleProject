@@ -1,0 +1,13 @@
+#card-price .col-md-6{
+    margin-top:5px;
+}
+.card{
+    height: 22px;
+    width: 27px;
+}
+.warn{
+    border:2px solid red;
+}
+.succ{
+    border:2px solid green;
+}

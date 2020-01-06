@@ -1,0 +1,25 @@
+<div class="row">
+
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+
+
+
+    <ol [@bounce]="bounce">
+     <li *ngFor="let rout of routeList">
+      <button [routerLink]="rout.route" class="btn btn-primary btn-lg button-an  btn-block">{{rout.name}}
+      </button>
+     </li>
+      <!-- <li><button routerLink="/dashboard" class="btn btn-primary btn-lg button-an  btn-block">Dashboard
+        </button> </li>
+      <li> <button class="btn btn-primary btn-lg button-an btn-block" routerLink="/dashboard/Profile">Profile</button></li>
+      <li><button class="btn btn-primary btn-lg button-an  btn-block" routerLink="/register/newUser">Register</button></li>
+      <li> <button class="btn btn-primary btn-lg button-an  btn-block" routerLink="/register/login">Login</button></li> -->
+    </ol>
+  </div>
+
+  <div class="col-md-4">
+
+  </div>
+</div>

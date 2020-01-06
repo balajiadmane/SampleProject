@@ -1,0 +1,50 @@
+[
+    {
+        "description":"March 2016",
+        "sic_code":"4312 Restaurant",
+        "cardBalance":{
+            "visa":41223,
+            "card1":411222,
+            "card2":6772233, 
+            "card3":98333,
+            "card4":444322,
+            "card5":662233,
+            "card6":123333,
+            "card7":5532
+        },
+        "pipeLine":{
+            "totalValume":43565531,
+            "totalTransaction":9430122,
+            "avgTicket":4423166223,
+            "currentRate":69122122,
+            "currentFees":92212201,
+            "currentAmexFees":44976899,
+            "merchantType":44987122,
+            "HighSpped":329872
+        }
+    },
+    {
+        "description":"March 2017",
+        "sic_code":"55222 Restaurant",
+        "cardBalance":{
+            "visa":41223,
+            "card1":452222,
+            "card2":6772233,
+            "card3":98333,
+            "card4":4322,
+            "card5":65562233,
+            "card6":12333,
+            "card7":553
+        },
+        "pipeLine":{
+            "totalValume":43531,
+            "totalTransaction":30122,
+            "avgTicket":44231663,
+            "currentRate":6922,
+            "currentFees":12201,
+            "currentAmexFees":44976899,
+            "merchantType":4987122,
+            "HighSpped":9872
+        }
+    }
+]
